@@ -281,7 +281,15 @@ h1,h2,h3{text-wrap:balance}
 <p style="margin: 0; font-size: 16px"><a href="mailto:info@thenexus.org" style="color: #E8A9BE">info@thenexus.org</a> · +27 82 603 0964</p>
 </div>
 </section>
-
+<script>
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a[href*='school.thenexus.org']");
+    if (a) a.target = "_top";
+  });
+  new ResizeObserver(() =>
+    parent.postMessage({ h: document.body.scrollHeight }, "*")
+  ).observe(document.body);
+</script>
 
 
 
